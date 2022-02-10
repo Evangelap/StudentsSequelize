@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <a href="create">Add New Student</a>
+    <ul>
+        <% for(var i = 0; i < students.length; i++) { %>
+            <li>
+                <%= `Id: ${students[i].id}\tFirst Name: ${students[i].firstName}\tLast Name: ${students[i].lastName}\tDate of Birth: ${students[i].dateOfBirth.toLocaleDateString()}\tTuition fees: ${students[i].tuitionFees} ` %> <a href="/delete?id= <%= students[i].id %>">Delete</a> <a href="/edit?id= <%= students[i].id %>&firstName= <%= students[i].firstName %>&lastName= <%= students[i].lastName %>&dateOfBirth= <%= students[i].dateOfBirth %>&tuitionFees= <%= students[i].tuitionFees %>">Edit</a>
+            </li>
+            
+        <% } %>
+        
+    </ul>
+</body>
+</html>
